@@ -1,0 +1,12 @@
+ultralytics
+wandb
+PyYAML
+roboflow
+matplotlib
+seaborn
+opencv-python
+os
+pandas
+flask
+flask-cors
+-e.
