@@ -1,4 +1,3 @@
-import os
 from roboflow import Roboflow
 
 def download_dataset(api_key, workspace, project_name, version_number):
