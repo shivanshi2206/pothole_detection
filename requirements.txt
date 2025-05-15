@@ -1,12 +1,9 @@
 ultralytics
-wandb
-PyYAML
 roboflow
 matplotlib
 seaborn
 opencv-python
-os
+pyyaml
 pandas
-flask
-flask-cors
+os
 -e.
