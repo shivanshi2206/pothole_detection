@@ -2,6 +2,8 @@ import os
 from ultralytics import YOLO
 from pothole_detection.utils import load_config
 from roboflow import Roboflow
+import torch
+
 
 def main():
     cfg = load_config()
@@ -15,6 +17,10 @@ def main():
 
     # === Model Training ===
     model = YOLO(cfg["training"]["model"])
+    device = cfg["training"]["device"]
+    if device == 0 and not torch.cuda.is_available():
+        device = 'cpu'
+
     results = model.train(
         data=yaml_path,
         epochs=cfg["training"]["epochs"],
@@ -24,7 +30,7 @@ def main():
         optimizer=cfg["training"]["optimizer"],
         lr0=cfg["training"]["lr0"],
         lrf=cfg["training"]["lrf"],
-        device=cfg["training"]["device"],
+        device=device,
         seed=cfg["training"]["seed"],
         mosaic=cfg["training"]["mosaic"],
         cos_lr=cfg["training"]["cos_lr"],
