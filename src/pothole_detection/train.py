@@ -30,7 +30,7 @@ def main():
         optimizer=cfg["training"]["optimizer"],
         lr0=cfg["training"]["lr0"],
         lrf=cfg["training"]["lrf"],
-        device=device,
+        #device=device,
         seed=cfg["training"]["seed"],
         mosaic=cfg["training"]["mosaic"],
         cos_lr=cfg["training"]["cos_lr"],
