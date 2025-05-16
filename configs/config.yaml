@@ -8,7 +8,7 @@ roboflow:
 
 training:
   model: "yolov8s-seg.pt"
-  epochs: 100
+  epochs: 1
   imgsz: 640
   patience: 15
   batch: 32
